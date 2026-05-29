@@ -11,7 +11,7 @@
   --lagoon:  #C8F3F8;
   --reef:    #4CA1AF;       /* electric cyan */
   --mid:     #2E6F7F;       /* glowing teal */
-  --deep:    #2E6F7F;       /* Garden Eel Teal */       /* Garden Eel Teal */       
+  --deep:    #2E6F7F;       /* Garden Eel Teal */       /* Garden Eel Teal */       /* Umvvelt Deep Lagoon */
   --abyss:   #0A192F;       /* Deep Abyss Navy */       /* Deep Abyss Navy */       /* near-black navy */        /* rich cobalt navy */       /* deep ocean navy */       /* deeper, more cosmic */
   --coral:   #0099CC;       /* Heart of the Sea Pink — main accent */
   --navy:    #0A192F;       /* Deep Abyss Navy */
@@ -291,7 +291,7 @@ a[style*="padding:.22rem"]{border-radius:999px!important;}
   50%{transform:translateX(30px) translateY(-2px);}
 }
 
-.hero-inner{position:relative;z-index:2;padding:5rem 2rem 3rem;display:flex;flex-direction:column;justify-content:center;max-width:700px;}
+.hero-inner{position:relative;z-index:2;padding:5rem 2rem 3rem;display:flex;flex-direction:column;justify-content:center;max-width:820px;}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
 
@@ -1791,6 +1791,7 @@ footer {
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#research">Research</a></li>
+    <li><a href="#methods">Methods</a></li>
     <li><a href="#publications">Publications</a></li>
     <li><a href="#teaching">Teaching</a></li>
     <li><a href="#outreach">Outreach</a></li>
@@ -1817,14 +1818,14 @@ footer {
   </svg>
 
   <div class="hero-inner">
-    <p class="hero-eyebrow">Marine Paleontologist &amp; Data Scientist</p>
+    <p class="hero-eyebrow">Marine Paleontologist · Data Scientist</p>
     <p class="hero-hi">Hi. I'm</p>
     <h1 class="hero-name">Dr. <em>Jood</em><br>Al Aswad.</h1>
     <p class="hero-tagline">The ocean's past is a warning we haven't finished reading.</p>
     <p class="hero-vision">
-      Earth's oceans have faced catastrophe before. I am a quantitative paleobiologist using the fossil record to understand how life survived those crises, and what those survivors can tell us about the oceans we have today.<br><br>
-      To my knowledge, I am the first female Saudi paleontologist. One of my goals is student outreach within paleontology, so that <strong>everyone feels like they belong.</strong><br><br>
-      I also draw digitally and with charcoal, and I'm writing a high fantasy novel woven through with biology and geology.  I build fantasy worlds out of the same material I study: deep time, ocean life, and what survives.
+      Earth's oceans have faced catastrophe before. I'm a quantitative paleobiologist tracking how environmental change reshapes ocean life and biodiversity across space and time. My work is inherently interdisciplinary: I blend physiology, geology, oceanography, and data science to understand the tipping points between extinction and endurance.<br><br>
+      To my knowledge, I am the first female Saudi paleontologist. One of my goals is student outreach within paleontology, so that <strong>everyone feels like they belong!</strong><br><br>
+      I also draw digitally and with charcoal, and I'm writing a high fantasy novel woven through with biology and geology. I build fantasy worlds out of the same material I study: deep time, ocean life, and what survives!
     </p>
     <div class="hero-cta">
       <a href="#research" class="btn-coral">See my research</a>
@@ -1850,15 +1851,15 @@ footer {
 
   <div class="cv-inner">
     <span class="cv-eyebrow sr d1">The Researcher</span>
-    <h2 class="cv-headline sr d2">Scientist, educator,<br><em>storyteller.</em></h2>
+    <h2 class="cv-headline sr d2">Scientist, data thinker,<br><em>storyteller.</em></h2>
 
     <div class="cv-feature" style="grid-template-columns:380px 1fr;gap:4rem;align-items:center;">
       <div class="about-photo-col sr d4" style="width:100%;aspect-ratio:4/5;overflow:hidden;border-radius:18px;border:1px solid rgba(0,153,204,.25);box-shadow:0 0 40px rgba(0,153,204,.2);cursor:pointer;" onclick="openLightbox(this.querySelector('img').src, this.querySelector('img').alt)">        <img src="images/hero.jpeg" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
       </div>
       <div class="cv-feature-body sr-middle d3">
         <span class="cv-eyebrow">Who is Dr. Jood?</span>
-        <p>Warming, acidification, and oxygen loss are dismantling ocean ecosystems faster than we can understand them. The fossil record has seen this before. I blend it with physiology and oceanography to understand how life survived past crises — rifling through roughly <strong>541 million years</strong> of history recorded in stone.</p>
-        <p>For my postdoc, I link fossils from the Late Pleistocene and Holocene to understand what ocean communities looked like before humans started degrading them to determine whether driver of extinction is unprecedented versus something the history of life can tell us more about.</p>
+        <p>Warming, acidification, and oxygen loss are dismantling ocean ecosystems faster than we can understand them. The fossil record has seen this before. I draw on <strong>biology, geology, oceanography, and quantitative data science</strong> to understand how life survived past crises by rifling through roughly <strong>541 million years</strong> of history recorded in stone.</p>
+        <p>For my postdoc, I use statistical modeling alongside Late Pleistocene and Holocene fossils to reconstruct what ocean communities looked like before humans started degrading them by building a data-driven baseline for understanding extinction drivers.</p>
         <p>Many marine ecosystems were already unrecognizable by the time modern ecology arrived to study them. <strong>The fossil record is how we recover that baseline.</strong></p>
       </div>
     </div><!-- /.cv-feature -->
@@ -1911,7 +1912,7 @@ footer {
             <div class="cv-numbered-num">Now</div>
             <div>
               <h4>Postdoctoral Fellow</h4>
-              <p>Virginia Tech · Dr. Pedro Monarrez's Lab. Coral reefs, metabolic index, invasive species, and machine learning.</p>
+              <p>Virginia Tech · Dr. Pedro Monarrez's Lab. Coral reefs, metabolic index, invasive species, and quantitative ecology.</p>
             </div>
           </div>
           <div class="cv-numbered-item fade-up delay-3">
@@ -1975,6 +1976,66 @@ footer {
     </div>
   </div>
 </section>
+
+<!-- METHODS & APPROACHES — interdisciplinary data-driven focus -->
+<section class="cv-section cv-cream-2" id="methods">
+  <div class="star tiny" style="top:12%;left:88%;animation-delay:1.4s;"></div>
+  <div class="star ocean" style="top:72%;left:6%;animation-delay:0.6s;"></div>
+  <div class="star" style="top:44%;left:92%;animation-delay:2.1s;"></div>
+
+  <div class="cv-inner">
+    <span class="cv-eyebrow sr d1">How I work</span>
+    <h2 class="cv-headline sr d2">Interdisciplinary by design.<br><em>Data-driven at every scale.</em></h2>
+    <p class="cv-lead sr d3">Answering deep-time questions requires pulling from biology, geology, oceanography, and computational science, all at once.</p>
+
+    <div class="cv-numbered sr d4" style="grid-template-columns:repeat(2,1fr);gap:1.5rem 2rem;margin-top:2.5rem;">
+
+      <div class="cv-numbered-item">
+        <div class="cv-numbered-num" style="font-size:2rem;">01</div>
+        <div>
+          <h4>Quantitative &amp; Biogeographic Analysis</h4>
+          <p>I use biogeographic similarity measures like Jaccard and construct equal-area hexagonal grids to track how global marine community composition has changed through time. Combined with large fossil occurrence databases, this lets me pull community-level and biogeographic signals from deep time and turn them into statistically tractable narratives about survival, diversity, and collapse.</p>
+        </div>
+      </div>
+
+      <div class="cv-numbered-item">
+        <div class="cv-numbered-num" style="font-size:2rem;">02</div>
+        <div>
+          <h4>Cross-Disciplinary Integration</h4>
+          <p>Fusing paleontology with marine biology, physical oceanography (oxygen, temperature, pH proxies), and ecology. My dissertation linked biogeographic patterns to extinction physiology, extinction and climate change; my postdoc extends this to invasive species and metabolic index modeling in the past ~125k years to the present.</p>
+        </div>
+      </div>
+
+      <div class="cv-numbered-item">
+        <div class="cv-numbered-num" style="font-size:2rem;">03</div>
+        <div>
+          <h4>Stratigraphy &amp; Fieldwork</h4>
+          <p>Reading rock sequences in the field to reconstruct ancient environments, collecting specimens, and systematically identifying fossils to build the primary datasets that everything else depends on. The numbers only mean something if you know what you're counting.</p>
+        </div>
+      </div>
+
+      <div class="cv-numbered-item">
+        <div class="cv-numbered-num" style="font-size:2rem;">04</div>
+        <div>
+          <h4>Data Visualization &amp; Science Communication</h4>
+          <p>Translating high-dimensional paleontological datasets into accessible visual narratives for scientific publication, public outreach, and policy-relevant storytelling. Fluent in R, Quarto, learning Python, and custom web-based visualization.</p>
+        </div>
+      </div>
+
+    </div><!-- /.cv-numbered -->
+  </div><!-- /.cv-inner -->
+</section>
+
+<!-- LINE DIVIDER: methods → research -->
+<div class="section-line-divider" aria-hidden="true">
+  <div class="sld-line dim"></div>
+  <div style="display:flex;align-items:center;gap:.7rem;width:100%;">
+    <div class="sld-line"></div>
+    <div class="sld-dot"></div>
+    <div class="sld-line"></div>
+  </div>
+  <div class="sld-line dim"></div>
+</div>
 
 <!-- RESEARCH - 4 panels alternating image / text with sticky glowing timeline -->
 <section class="cv-section cv-cream-2" id="research">
@@ -2047,26 +2108,26 @@ footer {
     <!-- MIS 5e Bivalves -->
     <div class="cv-feature sr d4" id="rp-cenozoic">
       <div class="cv-feature-img">
-        <img src="https://images.prismic.io/ocean-agency-cms/5aac3744-16b3-4773-ba02-b2376840dc42_Cover_Bleaching_TOA.jpg?auto=compress,format&w=1200" alt="Coral and reef life">
-        <span class="cv-credit">© Richard Vevers / Ocean Image Bank</span>
+        <img src="images/corals.jpg" alt="Coral and reef life">
+        <span class="cv-credit">© The Ocean Agency/ Ocean Image Bank</span>
       </div>
       <div class="cv-feature-body">
         <span class="cv-eyebrow">Late Pleistocene · ~125,000 years ago</span>
         <h3>Climate change or human-assisted invasions?</h3>
-        <p>Current projects shift to conservation paleobiology, where I examine how corals and bivalves have responded to past climate changes before humans and utilize my interdisciplinary tools in palebiology, physiology, and oceanography to quantify how important ocean deoxygenation has been, and continues to be, for these organisms. /p>
+        <p>Current projects shift to conservation paleobiology, where I examine how corals and bivalves have responded to past climate changes before humans and utilize my interdisciplinary tools in palebiology, physiology, and oceanography to quantify how important ocean deoxygenation has been, and continues to be, for these organisms. </p>
           </div>
     </div>
 
     <!-- Future -->
     <div class="cv-feature reverse sr d4" id="rp-future">
       <div class="cv-feature-img">
-        <img src="https://images.prismic.io/ocean-agency-cms/aShFDnNYClf9nij4_OceanImageBank_EmilieLedwidge_34.jpg?auto=format,compress&w=1200" alt="Coral close-up">
-        <span class="cv-credit">© Emilie Ledwidge / Ocean Image Bank</span>
+       <img src="images/corals2.jpeg" alt="Coral and reef life">
+      <span class="cv-credit">© Richard Vevers / Ocean Image Bank</span>
       </div>
       <div class="cv-feature-body">
         <span class="cv-eyebrow">Future · Now → 2100</span>
         <h3>How far back does coral hypoxic tolerance go?</h3>
-        <p>The fossil record is an underused archive for understanding what ocean life can and cannot survive under deoxygenation. <strong>My work puts it back in by combining the metabolic index, data from physiological respirometry experiments, and a longer timeline to determine their baselines before humans.</strong></p>
+        <p>The fossil record is an underused archive for understanding what ocean life can and cannot survive under deoxygenation. My work puts it back in by combining the metabolic index, data from physiological respirometry experiments, and a longer timeline to determine their baselines before humans.</p>
       </div>
     </div>
 
