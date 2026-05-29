@@ -39,7 +39,7 @@
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 p{line-height:1.78;letter-spacing:0.01em;font-weight:400;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth;overflow-x:hidden;}
 body{font-family:var(--sans);background:#08192e;color:#C8F3F8;font-weight:300;overflow-x:hidden;}
 
 /* SCROLL REVEAL */
@@ -343,12 +343,14 @@ a[style*="padding:.22rem"]{border-radius:999px!important;}
 .portrait-large {
   height: 100%;
   min-height: 0;
+  flex: 1;
 }
 
 .portrait-large img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  display: block;
 }
 .hero-affil{padding:1.5rem 2rem;background:rgba(6,40,64,.55);backdrop-filter:blur(8px);}
 .hero-affil-role{font-size:.9rem;font-weight:600;color:var(--coral);letter-spacing:.03em;margin-bottom:.25rem;}
@@ -1221,7 +1223,34 @@ footer a:hover{color:#FEE180;}
   /* Hero — stack photo above text, reduce padding */
   .hero{grid-template-columns:1fr!important;grid-template-rows:auto auto;min-height:auto!important;height:auto!important;}
   .hero-inner{padding:2rem 1.5rem 3rem!important;max-width:100%!important;grid-row:2;order:2;}
-  .hero-photo-col{margin-right:0!important;width:100%!important;grid-row:1;order:1;padding:5rem 1.5rem 1rem!important;display:flex!important;flex-direction:column!important;align-items:center;}
+  .hero-photo-col{
+    margin-right:0!important;
+    width:100%!important;
+    grid-row:1;
+    order:1;
+    padding:5rem 1.5rem 0!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center;
+    height:auto!important;
+    align-self:auto!important;
+  }
+  /* Portrait must have explicit height on mobile — not 100% of an auto-height parent */
+  .portrait-large{
+    aspect-ratio:4/5 !important;
+    height:auto !important;
+    max-width:260px;
+    width:100%;
+    flex:0 0 auto !important;
+    border-radius:18px;
+    overflow:hidden;
+  }
+  .portrait-large img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover;
+    display:block;
+  }
   .portrait-large{aspect-ratio:4/5;max-width:280px;width:100%;flex:0 0 auto!important;border-radius:18px;overflow:hidden;}
   .hero-name{font-size:clamp(2.4rem,11vw,3.6rem)!important;}
   .hero-hi{font-size:1.1rem!important;}
@@ -1352,19 +1381,7 @@ footer a:hover{color:#FEE180;}
   #publications article h3{font-size:1.05rem!important;line-height:1.3!important;margin-bottom:.4rem!important;}
   #publications article p{font-size:.85rem!important;line-height:1.55!important;}
   
-  /* Hero portrait — use a placeholder gradient if image fails */
-  .portrait-large{
-    aspect-ratio:4/5;
-    max-width:240px;
-    width:100%;
-    background:linear-gradient(135deg,#2a5e6e 0%,#4CA1AF 50%,#A2EBF2 100%);
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 8px 32px rgba(0,153,204,.25);
-  }
-  .portrait-large img{width:100%;height:100%;object-fit:cover;display:block;}
-  /* Hide broken image alt-text appearance */
-  .portrait-large img[alt*="placeholder"]{opacity:.7;}
+  /* Hero portrait — handled above */
   
   /* Hero affil card — tighten */
   .hero-affil{padding:.9rem 1.1rem!important;margin-top:1rem;}
@@ -1511,8 +1528,6 @@ footer a:hover{color:#FEE180;}
   border-radius:10px;
   box-shadow:0 0 60px rgba(0,153,204,.35),0 0 120px rgba(254,225,128,.18);
 }
-
-.education-layout {
   display: grid;
   grid-template-columns: 1.2fr 2.8fr;
   gap: 4rem;
@@ -1559,6 +1574,7 @@ footer a:hover{color:#FEE180;}
 
 .defense-banner-col {
   margin-left: calc(-1 * var(--page-padding, 2rem));
+  overflow: hidden;
 }
 
 .education-text {
@@ -1594,13 +1610,40 @@ footer a:hover{color:#FEE180;}
 }
 .defense-caption{font-family:var(--serif);font-size:1rem;line-height:1.5;color:#A2EBF2;text-align:center;max-width:680px;padding:0;margin:1.25rem 0 0;z-index:2;}
 .defense-caption em{color:#FEE180;font-style:italic;}
+
 @media (max-width:768px){
-  .defense-banner{position:relative;width:100%;background:#0a1f3d;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:3rem 1.5rem 2.5rem;}
-.defense-video {
-  aspect-ratio: 2 / 3;
-  object-fit: cover;
-}
-  .defense-caption{font-family:var(--serif);font-size:1rem;line-height:1.5;color:#A2EBF2;text-align:center;max-width:680px;padding:0;margin:1.25rem 0 0;z-index:2;}
+  /* Kill the negative margin that pulls outside viewport */
+  .defense-banner-col {
+    margin-left: 0 !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+  .defense-banner{
+    position:relative;
+    width:100% !important;
+    background:#0a1f3d;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:2rem 1rem 2rem;
+  }
+  .defense-video {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .defense-caption{font-size:.9rem;margin:1rem 0 0;}
+
+  /* Education numbered cards — 2 col → 1 col */
+  #education .cv-numbered{grid-template-columns:1fr!important;gap:1rem!important;}
+
+  /* Education layout already handled above but reinforce */
+  .education-text{padding-left:0!important;}
 }
 
 /* Outreach 3-photo gallery — equal size */
