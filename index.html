@@ -58,6 +58,35 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;justify-content
 .nav-links a{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(200,243,248,.8);text-decoration:none;transition:all .25s;font-weight:500;}
 .nav-links a:hover{color:#FEE180;}
 
+/* HAMBURGER */
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:.4rem;z-index:310;}
+.nav-toggle span{display:block;width:22px;height:2px;background:#C8F3F8;border-radius:2px;transition:all .3s ease;}
+.nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-toggle.open span:nth-child(2){opacity:0;}
+.nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* Mobile nav drawer */
+@media (max-width:768px){
+  nav{padding:.85rem 1.25rem;}
+  .nav-name{font-size:.88rem;}
+  .nav-toggle{display:flex;}
+  .nav-links{
+    display:none;
+    position:fixed;
+    top:0;left:0;right:0;
+    padding:5rem 2rem 2rem;
+    background:rgba(8,25,46,.97);
+    backdrop-filter:blur(24px);
+    flex-direction:column;
+    gap:0;
+    z-index:299;
+    border-bottom:1px solid rgba(0,153,204,.25);
+  }
+  .nav-links.open{display:flex;}
+  .nav-links li{border-bottom:1px solid rgba(162,235,242,.1);}
+  .nav-links a{display:block;padding:1rem .5rem;font-size:.72rem;letter-spacing:.18em;}
+}
+
 /* HERO */
 
 .hero{min-height:100vh; overflow:hidden; background:linear-gradient(165deg,#0f1f3a 0%,#083a56 55%,#0b2845 100%);display:grid;grid-template-columns:1.2fr 3fr;align-items:stretch;overflow:hidden;position:relative;}
@@ -726,7 +755,7 @@ footer a:hover{color:#FEE180;}
 }
 
 
-50%{background-position:calc(center + 20px) calc(top + 10px);}
+/* (removed orphaned keyframe fragment) */
 
 
 
@@ -1190,7 +1219,7 @@ footer a:hover{color:#FEE180;}
   .nav-links a{font-size:.58rem;letter-spacing:.12em;}
   
   /* Hero — stack photo above text, reduce padding */
-  .hero{grid-template-columns:1fr!important;grid-template-rows:auto auto;min-height:auto!important;}
+  .hero{grid-template-columns:1fr!important;grid-template-rows:auto auto;min-height:auto!important;height:auto!important;}
   .hero-inner{padding:2rem 1.5rem 3rem!important;max-width:100%!important;grid-row:2;order:2;}
   .hero-photo-col{margin-right:0!important;width:100%!important;grid-row:1;order:1;padding:5rem 1.5rem 1rem!important;display:flex!important;flex-direction:column!important;align-items:center;}
   .portrait-large{aspect-ratio:4/5;max-width:280px;width:100%;flex:0 0 auto!important;border-radius:18px;overflow:hidden;}
@@ -1295,7 +1324,6 @@ footer a:hover{color:#FEE180;}
 /* Very small phones */
 @media (max-width:380px){
   nav{padding:.7rem 1rem;}
-  .nav-links{display:none;} /* Hide on very narrow */
   .cv-section{padding:3rem 1.25rem!important;}
   .hero-inner{padding:5rem 1.25rem 2rem!important;}
 }
@@ -1371,14 +1399,10 @@ footer a:hover{color:#FEE180;}
   .hero-name{font-size:clamp(2rem,9.5vw,3rem)!important;line-height:1.05!important;}
   .hero-hi{font-size:.95rem!important;margin-bottom:.5rem;}
   
-  /* Nav — make it more compact, hide secondary links */
+  /* Nav — make it more compact */
   nav{padding:.7rem 1rem!important;}
-  .nav-name{font-size:.78rem!important;max-width:140px;line-height:1.15;}
-  .nav-links{gap:.6rem!important;}
-  .nav-links a{font-size:.55rem!important;letter-spacing:.1em!important;}
-  /* On narrow screens, only show key links */
-  .nav-links li:nth-child(4),
-  .nav-links li:nth-child(5){display:none;}
+  .nav-name{font-size:.78rem!important;max-width:160px;line-height:1.15;}
+  /* (nav-links and individual li hiding removed — handled by hamburger) */
   
   /* Section eyebrow + headlines bottom margin tighter */
   .cv-eyebrow{margin-bottom:.9rem!important;}
@@ -1408,8 +1432,7 @@ footer a:hover{color:#FEE180;}
 }
 
 @media (max-width:380px){
-  .nav-links li:nth-child(3),
-  .nav-links li:nth-child(6){display:none;}
+  /* Extra items already in drawer, no additional hiding needed */
 }
 
 /* CV Preview Toggle & Frame */
@@ -1479,7 +1502,7 @@ footer a:hover{color:#FEE180;}
 
 
 /* Defense flyer animated banner */
-.defense-banner{position:relative;width:150%;background:#0a1f3d;overflow:hidden;display:flex;flex-direction:column;justify-content:left;align-items:left;padding:2rem 1.5rem 2.5rem;}
+.defense-banner{position:relative;width:100%;background:#0a1f3d;overflow:hidden;display:flex;flex-direction:column;justify-content:left;align-items:left;padding:2rem 1.5rem 2.5rem;}
 .defense-video{
   display:block;
   max-width:520px;
@@ -1494,6 +1517,43 @@ footer a:hover{color:#FEE180;}
   grid-template-columns: 1.2fr 2.8fr;
   gap: 4rem;
   align-items: start;
+}
+
+@media (max-width: 768px) {
+  .education-layout {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .defense-banner-col {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  .defense-video {
+    max-width: 100% !important;
+    width: 100% !important;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+  }
+  .education-text {
+    padding-left: 0 !important;
+  }
+  /* About feature — inline style override */
+  #about .cv-feature {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  #about .about-photo-col {
+    max-width: 300px !important;
+    margin: 0 auto !important;
+  }
+  /* Skills grid — 4 cols → 2 cols on mobile */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* Prev research grid */
+  .prev-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 
@@ -1535,7 +1595,7 @@ footer a:hover{color:#FEE180;}
 .defense-caption{font-family:var(--serif);font-size:1rem;line-height:1.5;color:#A2EBF2;text-align:center;max-width:680px;padding:0;margin:1.25rem 0 0;z-index:2;}
 .defense-caption em{color:#FEE180;font-style:italic;}
 @media (max-width:768px){
-  .defense-banner{position:relative;width:750%;background:#0a1f3d;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:3rem 1.5rem 2.5rem;}
+  .defense-banner{position:relative;width:100%;background:#0a1f3d;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:3rem 1.5rem 2.5rem;}
 .defense-video {
   aspect-ratio: 2 / 3;
   object-fit: cover;
@@ -1788,15 +1848,18 @@ footer {
 
 <nav>
   <span class="nav-name">Dr. Jood Al Aswad</span>
+  <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#methods">Methods</a></li>
-    <li><a href="#publications">Publications</a></li>
-    <li><a href="#teaching">Teaching</a></li>
-    <li><a href="#outreach">Outreach</a></li>
-    <li><a href="#art">Art</a></li>
-    <li><a href="#contact">Contact + CV</a></li>
+    <li><a href="#about" onclick="document.querySelector('.nav-links').classList.remove('open');document.querySelector('.nav-toggle').classList.remove('open')">About</a></li>
+    <li><a href="#research" onclick="document.querySelector('.nav-links').classList.remove('open');document.querySelector('.nav-toggle').classList.remove('open')">Research</a></li>
+    <li><a href="#methods" onclick="document.querySelector('.nav-links').classList.remove('open');document.querySelector('.nav-toggle').classList.remove('open')">Methods</a></li>
+    <li><a href="#publications" onclick="document.querySelector('.nav-links').classList.remove('open');document.querySelector('.nav-toggle').classList.remove('open')">Publications</a></li>
+    <li><a href="#teaching" onclick="document.querySelector('.nav-links').classList.remove('open');document.querySelector('.nav-toggle').classList.remove('open')">Teaching</a></li>
+    <li><a href="#outreach" onclick="document.querySelector('.nav-links').classList.remove('open');document.querySelector('.nav-toggle').classList.remove('open')">Outreach</a></li>
+    <li><a href="#art" onclick="document.querySelector('.nav-links').classList.remove('open');document.querySelector('.nav-toggle').classList.remove('open')">Art</a></li>
+    <li><a href="#contact" onclick="document.querySelector('.nav-links').classList.remove('open');document.querySelector('.nav-toggle').classList.remove('open')">Contact + CV</a></li>
   </ul>
 </nav>
 
