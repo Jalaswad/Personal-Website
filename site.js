@@ -42,66 +42,48 @@ document.addEventListener('DOMContentLoaded', () => {
   initTimeline();
 });
 
-// --- TIMELINE ---
+// --- TIMELINE — IntersectionObserver on panels, grows line as you scroll ---
 function initTimeline() {
-  const panelIds = ['rp-phan','rp-permian','rp-cenozoic','rp-future'];
-  const items    = Array.from(document.querySelectorAll('.rt-item'));
-  const aside    = document.querySelector('.research-layout > aside');
-  if (!items.length || !aside) return;
+  const panels = Array.from(document.querySelectorAll('.rp-panel'));
+  const fill   = document.querySelector('.tl-fill');
+  const layout = document.querySelector('.research-layout');
+  if (!panels.length) return;
 
-  function positionNodes() {
-    const asideTop = aside.getBoundingClientRect().top + window.scrollY;
-    const asideH   = aside.offsetHeight;
-    if (asideH < 50) return;
-    panelIds.forEach((id, i) => {
-      const panel = document.getElementById(id);
-      if (!panel || !items[i]) return;
-      const pct = ((panel.getBoundingClientRect().top + window.scrollY) - asideTop) / asideH * 100;
-      items[i].style.top = Math.max(1, Math.min(97, pct)) + '%';
-    });
+  // Add the glowing fill element if not present
+  if (!fill && layout) {
+    const f = document.createElement('div');
+    f.className = 'tl-fill';
+    layout.appendChild(f);
   }
 
-  function updateLine() {
-    const asideTop = aside.getBoundingClientRect().top + window.scrollY;
-    const asideH   = aside.offsetHeight;
-    if (asideH < 50) return;
-    const pct = Math.max(0, Math.min(100,
-      ((window.scrollY + window.innerHeight * 0.45) - asideTop) / asideH * 100));
-    aside.style.setProperty('--progress', pct + '%');
+  function updateFill() {
+    const f = document.querySelector('.tl-fill');
+    if (!f || !layout) return;
+    // Find the last in-view panel, grow line to its center
+    const inView = panels.filter(p => p.classList.contains('in-view'));
+    if (!inView.length) { f.style.height = '0'; return; }
+    const last  = inView[inView.length - 1];
+    const lRect = last.getBoundingClientRect();
+    const pRect = layout.getBoundingClientRect();
+    const h = (lRect.top + lRect.height * 0.3) - pRect.top + layout.scrollTop;
+    f.style.height = Math.max(0, h) + 'px';
   }
 
-  function updateActive() {
-    const mid = window.innerHeight / 2;
-    let activeIdx = -1, closest = Infinity;
-    panelIds.forEach((id, i) => {
-      const el = document.getElementById(id); if (!el) return;
-      const r  = el.getBoundingClientRect();
-      const dist = Math.abs(r.top + r.height / 2 - mid);
-      if (r.top < window.innerHeight && r.bottom > 0 && dist < closest) { closest = dist; activeIdx = i; }
+  // Observe each panel — add in-view when it enters viewport
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('in-view');
+      else e.target.classList.remove('in-view');
     });
-    items.forEach((item, i) => {
-      item.classList.toggle('active',  i === activeIdx);
-      item.classList.toggle('visited', i < activeIdx);
-    });
-  }
+    updateFill();
+  }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
 
-  items.forEach(item => {
-    item.addEventListener('click', e => {
-      e.preventDefault();
-      const el = document.getElementById(item.getAttribute('data-target'));
-      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 110, behavior: 'smooth' });
-    });
-  });
+  panels.forEach(p => io.observe(p));
 
-  function update() { updateLine(); updateActive(); }
-  positionNodes(); update();
-  window.addEventListener('scroll', update, { passive: true });
-  window.addEventListener('resize', () => { positionNodes(); update(); }, { passive: true });
-  window.addEventListener('load',   () => { positionNodes(); update(); });
-  setTimeout(() => { positionNodes(); update(); }, 300);
-  setTimeout(() => { positionNodes(); update(); }, 900);
+  // Also update fill on scroll for smooth growth
+  window.addEventListener('scroll', updateFill, { passive: true });
+  window.addEventListener('resize', updateFill, { passive: true });
 }
-document.addEventListener('DOMContentLoaded', initTimeline);
 
 // --- RARE FISH ---
 (function spawnPageFish() {
