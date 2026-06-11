@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teaching: Dr. Jood Al Aswad</title>
+<link rel="stylesheet" href="site.css">
+<style>
+.badge {
+  display: inline-block; margin-left: 0.6rem;
+  padding: 0.18rem 0.65rem;
+  font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
+  border-radius: 999px; font-weight: 600; vertical-align: middle;
+}
+.badge-pink  { background: rgba(180,60,90,.10); color: #7a1535; border: 1px solid rgba(180,60,90,.35); }
+.badge-cyan  { background: rgba(46,125,154,.12); color: #1a5570; border: 1px solid rgba(46,125,154,.4); }
+.badge-gold  { background: rgba(140,100,10,.10); color: #5a3e00; border: 1px solid rgba(140,100,10,.35); }
+.badge-teal  { background: rgba(46,125,154,.12);  color: #1a5570; border: 1px solid rgba(76,161,175,.4); }
+.game-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.game-photo {
+  aspect-ratio: 16/9; overflow: hidden; border-radius: 14px;
+  background: var(--neu-dark);
+  box-shadow: 5px 5px 12px var(--neu-dark), -4px -4px 10px var(--neu-light);
+  transition: all 0.3s;
+}
+.game-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.game-photo:hover { transform: translateY(-3px); }
+@media (max-width: 700px) { .game-gallery { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-name">Dr. Jood Al Aswad</a>
+  <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="index.html">About</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="teaching.html">Teaching</a></li>
+    <li><a href="outreach.html">Outreach &amp; Art</a></li>
+    <li><a href="contact.html">Contact + CV</a></li>
+  </ul>
+</nav>
+
+<section class="section-intro">
+  <div class="bokeh">
+    <div class="bokeh-orb" style="--tx:40px;--ty:-22px;--ts:1.1;width:450px;height:450px;top:5%;left:55%;"></div>
+    <div class="bokeh-orb" style="--tx:-25px;--ty:18px;--ts:0.92;width:380px;height:380px;top:25%;left:-3%;"></div>
+  </div>
+  <div class="section-intro-inner">
+    <span class="eyebrow sr d1">Teaching</span>
+    <h1 class="sr d2">I love to <em>teach.</em></h1>
+    <p class="lead sr d3">From freshmen in the humanities to PhD students in paleobiology, I've taught across every level, and I believe science education is one of the most important things I can do.</p>
+  </div>
+  <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;position:absolute;bottom:0;left:0;right:0;">
+    <path d="M0,25 C360,52 720,-2 1080,25 C1260,38 1360,14 1440,25 L1440,50 L0,50 Z" fill="#2a6070"/>
+  </svg>
+</section>
+
+<section class="neu-section">
+  <div class="neu-inner">
+
+    <p class="section-lead sr d1">My teaching philosophy centers on creating engaging, student-centered learning experiences, it fills me with great joy to help teach future scientists from all backgrounds about the oceans, the history of life, and the world around them.</p>
+
+    <!-- Course grid -->
+    <div class="neu-grid-2 sr d2">
+      <div class="neu-card accent-pink">
+        <div class="neu-card-num">01</div>
+        <h4>The Sixth Mass Extinction <span class="badge badge-pink">Taught 3× quarters</span></h4>
+        <p>EPS 169/269 at Stanford, with Dr. Jonathan Payne. Head TA across <strong>Autumn 2024, Winter 2023, and Spring 2023</strong>. Helped create the class, designed the syllabus, built activities, and prepared and taught multiple lectures.</p>
+      </div>
+      <div class="neu-card accent-cyan">
+        <div class="neu-card-num">02</div>
+        <h4>Macroevolution <span class="badge badge-cyan">Spring 2024</span></h4>
+        <p>EPS 136/236 at Stanford. Teaching Assistant supporting students in the study of evolutionary patterns across deep time.</p>
+      </div>
+      <div class="neu-card accent-gold">
+        <div class="neu-card-num">03</div>
+        <h4>Coevolution of Life and Earth <span class="badge badge-gold">Autumn 2022</span></h4>
+        <p>GEOLSCI 4 at Stanford. Teaching Assistant exploring how life and the planet have shaped one another through geologic time.</p>
+      </div>
+      <div class="neu-card accent-teal">
+        <div class="neu-card-num">04</div>
+        <h4>Physical Geography, Climate Change <span class="badge badge-teal">Winter 2023 · Guest</span></h4>
+        <p>Foothill College. Guest lecturer for Week 7: Climate Change, taught a lecture and activities including a paper-chain of 460 circles representing the age of the Earth, climograph exercises, and a Book Club discussion.</p>
+      </div>
+      <div class="neu-card accent-pink">
+        <div class="neu-card-num">05</div>
+        <h4>Introduction to Paleobiology <span class="badge badge-pink">Summer 2021</span></h4>
+        <p>Friday Harbor Laboratories at the University of Washington. Taught a module introducing paleobiology to undergraduate and graduate students, incorporating active participation via TopHat.</p>
+      </div>
+      <div class="neu-card accent-cyan">
+        <div class="neu-card-num">06</div>
+        <h4>Mentorship, Payne Paleobiology Lab <span class="badge badge-cyan">Summer 2022</span></h4>
+        <p>Mentored Victor Trujillo and Lucy Helms through Stanford SURGE, and concurrently assisted in mentoring Edward Huang (Bio-X) and Kelly Tung, McKenna Sanders, and Sakeena Saber (Stanford Earth Young Investigators).</p>
+      </div>
+    </div>
+
+    <!-- Award callout -->
+    <div class="sr d3" style="margin-top:3.5rem;padding:2rem 2.5rem;
+         background:#cfe8ed;border-radius:18px;
+         box-shadow:inset 5px 5px 12px #aac8d0,inset -4px -4px 10px #ffffff;
+         border-left:4px solid var(--gold);">
+      <p style="font-family:var(--serif);font-size:1.32rem;color:var(--gold);margin-bottom:0.6rem;font-style:italic;">Stanford Centennial Teaching Assistant Award · 2025</p>
+      <p style="color:#333333;font-size:1rem;line-height:1.78;">Teaching these topics has been incredibly rewarding, and in 2025 I was honored to receive Stanford's Centennial Teaching Assistant Award for my work in these classes.</p>
+    </div>
+
+    <!-- Game feature -->
+    <div class="sr d4" style="margin-top:4.5rem;">
+      <span class="eyebrow">A classroom activity I created</span>
+      <h2 class="section-headline" style="margin-bottom:1rem;">Survive the Great Dying</h2>
+      <p class="section-lead">A game I created for the Sixth Mass Extinction class using publicly available resources. Students vote on choices based on what they've learned in class to help their creature survive the end-Permian mass extinction.</p>
+      <p style="color:#555555;font-size:0.92rem;font-style:italic;margin-bottom:2rem;">Rules: Get at least 500 points to survive. Vote on PollEverywhere. The answer with the highest submissions is chosen each round.</p>
+      <div class="game-gallery">
+        <div class="game-photo"><img src="images/extinction1.png" alt="Survive the Great Dying, screenshot 1"></div>
+        <div class="game-photo"><img src="images/extinction2.png" alt="Survive the Great Dying, screenshot 2"></div>
+        <div class="game-photo"><img src="images/extinction3.png" alt="Survive the Great Dying, screenshot 3"></div>
+      </div>
+      <p style="margin-top:1.5rem;color:#555555;">Contact me for more information about this game and how to use it in your course.</p>
+    </div>
+
+  </div>
+</section>
+
+<svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;background:#f0f7f8;margin-bottom:-2px;">
+  <path d="M0,25 C360,52 720,-2 1080,25 C1260,38 1360,14 1440,25 L1440,50 L0,50 Z" fill="#b8d8e2"/>
+</svg>
+
+<section class="dark-band" style="padding:4rem 3rem;text-align:center;">
+  <p class="pull-quote sr d1" style="font-size:clamp(1.3rem,2vw,1.9rem);color:#111111;">
+    I'm preparing courses in oceanography, marine ecology, geology, and biogeography, <em>if you're hiring, let's talk.</em>
+  </p>
+  <div class="flex-gap sr d2" style="justify-content:center;margin-top:2rem;">
+    <a href="contact.html" class="btn-solid">Get in touch</a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Dr. Jood Al Aswad</span>
+  <a href="contact.html">Contact + CV</a>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

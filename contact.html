@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact &amp; CV: Dr. Jood Al Aswad</title>
+<link rel="stylesheet" href="site.css">
+<style>
+.cv-toggle {
+  width: 100%;
+  display: flex; align-items: center; gap: 0.85rem;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(46,125,154,0.3);
+  color: #111111;
+  font-family: var(--sans); font-size: 0.78rem;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  font-weight: 600; padding: 1.1rem 1.5rem;
+  border-radius: 999px; cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s; margin-bottom: 1.5rem;
+}
+.cv-toggle:hover { background: #ffffff; border-color: var(--teal); }
+.cv-frame { border-radius: 14px; overflow: hidden; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-name">Dr. Jood Al Aswad</a>
+  <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="index.html">About</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="teaching.html">Teaching</a></li>
+    <li><a href="outreach.html">Outreach &amp; Art</a></li>
+    <li><a href="contact.html">Contact + CV</a></li>
+  </ul>
+</nav>
+
+<!-- CONTACT, LIGHT SEAFOAM -->
+<section style="min-height:100vh;background:linear-gradient(150deg,#c8e8f0 0%,#daf0f5 45%,#f0f7f8 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:8rem 2rem 5rem;position:relative;overflow:hidden;">
+
+  <div class="bokeh">
+    <div class="bokeh-orb" style="--tx:45px;--ty:-28px;--ts:1.12;width:600px;height:600px;top:-10%;left:30%;"></div>
+    <div class="bokeh-orb" style="--tx:-30px;--ty:22px;--ts:0.92;width:450px;height:450px;top:35%;left:-5%;"></div>
+    <div class="bokeh-orb" style="--tx:25px;--ty:-18px;--ts:1.05;width:350px;height:350px;top:40%;right:-5%;"></div>
+  </div>
+
+  <div style="position:relative;z-index:2;width:100%;max-width:600px;text-align:center;">
+    <span class="eyebrow sr d1" style="display:inline-block;margin-bottom:1rem;">Get in touch · Contact &amp; CV</span>
+    <h1 style="font-family:var(--serif);font-size:clamp(2rem,4vw,3.4rem);font-weight:400;line-height:1;
+         color:#111111;margin-bottom:1.25rem;letter-spacing:-0.02em;" class="sr d2">
+      Let's talk about the past, present,<br><em style="font-style:italic;color:var(--teal-d);">and future of ocean life.</em>
+    </h1>
+    <p style="font-size:1.05rem;color:#333333;line-height:1.82;margin-bottom:2.5rem;" class="sr d3">
+      Whether you're a hiring committee, a prospective collaborator, a student, or simply someone who cares about reefs, I'd love to hear from you.
+    </p>
+
+    <!-- CV Preview -->
+    <div class="sr d3" style="margin-bottom:2.5rem;">
+      <button class="cv-toggle" onclick="toggleCV(this)">
+        <span id="cv-toggle-icon">▸</span>
+        <span id="cv-toggle-label">Preview CV in browser</span>
+        <span style="margin-left:auto;font-size:0.62rem;opacity:0.65;">No download required</span>
+      </button>
+      <div id="cv-frame" style="display:none;">
+        <div class="cv-frame">
+          <object data="cv.pdf" type="application/pdf" width="100%" height="700">
+            <p style="color:var(--text-muted);padding:1.5rem;text-align:center;">
+              <a href="cv.pdf" style="color:var(--teal-d);">Download CV directly</a>
+            </p>
+          </object>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact form -->
+    <div class="contact-form sr d4">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Name</label>
+          <input class="form-input" type="text" id="name" placeholder="Your name" autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input class="form-input" type="email" id="email" placeholder="you@domain.com" autocomplete="email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Subject</label>
+        <input class="form-input" type="text" id="subject" placeholder="What's this about?">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea class="form-textarea" id="message" placeholder="Tell me about your project, question, or idea…"></textarea>
+      </div>
+      <button class="form-submit" onclick="submitForm()">Send message</button>
+      <div id="formSuccess" style="display:none;padding:1.2rem;background:rgba(76,161,175,0.12);
+           border:1px solid rgba(76,161,175,0.4);border-radius:10px;
+           text-align:center;font-family:var(--serif);font-size:1.05rem;
+           color:var(--teal-d);margin-top:1rem;">
+        ✦ Opening your mail app… send the message to complete.
+      </div>
+      <p style="font-size:0.76rem;color:rgba(10,37,53,0.5);text-align:center;margin-top:0.9rem;">
+        This form opens your email client. For direct contact: <a href="mailto:jood@vt.edu" style="color:#1a6e84;">jood@vt.edu</a>
+      </p>
+    </div>
+
+    <!-- External links -->
+    <div class="flex-gap sr d5" style="justify-content:center;margin-top:2rem;">
+      <a href="https://orcid.org/0000-0003-4360-7665" class="btn-ghost" style="border-color:var(--teal);color:var(--teal);" target="_blank">ORCID</a>
+      <a href="http://linkedin.com/in/joodalaswad" class="btn-ghost" style="border-color:var(--teal);color:var(--teal);" target="_blank">LinkedIn</a>
+      <a href="cv.pdf" class="btn-solid" target="_blank">Download CV</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Dr. Jood Al Aswad · geojood.com</span>
+  <a href="mailto:jood@vt.edu">jood@vt.edu</a>
+</footer>
+
+<script src="site.js"></script>
+<script>
+function toggleCV(btn) {
+  const frame = document.getElementById('cv-frame');
+  const icon  = document.getElementById('cv-toggle-icon');
+  const label = document.getElementById('cv-toggle-label');
+  const open  = frame.style.display === 'block';
+  frame.style.display = open ? 'none' : 'block';
+  icon.textContent  = open ? '▸' : '▾';
+  label.textContent = open ? 'Preview CV in browser' : 'Hide CV preview';
+}
+</script>
+</body>
+</html>
