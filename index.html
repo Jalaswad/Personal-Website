@@ -42,7 +42,7 @@
     <h1 class="hero-name">Dr. <em>Jood</em><br>Al Aswad.</h1>
     <p class="hero-tagline">The ocean's past is a warning we haven't finished reading.</p>
     <p class="hero-vision">
-      Earth's oceans have faced catastrophe before. I'm a quantitative paleobiologist tracking how environmental change reshapes ocean life and biodiversity across space and time. My work is inherently interdisciplinary: I blend physiology, geology, earth system modeling, oceanography, and data science to understand the tipping points between extinction and endurance.<br><br>
+      Earth's oceans have faced catastrophe before. I'm a quantitative paleobiologist tracking how environmental change reshapes ocean life and biodiversity across space and time. My work is inherently interdisciplinary: I blend physiology, geology, Earth system modeling, oceanography, and data science to understand the tipping points between extinction and endurance.<br><br>
       To my knowledge, I am the first female Saudi paleontologist.<br><br>
       One of my goals is student outreach within paleontology, so that <strong>everyone feels like they belong!</strong> I also draw digitally and with charcoal, and I'm writing a high fantasy novel woven through with biology and geology. I build fantasy worlds out of the same material I study: deep time, ocean life, and what survives!
     </p>
@@ -63,37 +63,44 @@
   </div>
 
   <!-- Bottom wave into neumorphic zone -->
-  <svg class="hero-wave" viewBox="0 0 1440 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-    <path d="M0,30 C360,58 720,4 1080,30 C1260,44 1360,22 1440,30 L1440,56 L0,56 Z" fill="#f0f7f8"/>
+  <svg height="70" class="hero-wave" viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,40 C280,70 560,10 840,45 C1080,72 1260,15 1440,42 L1440,70 L0,70 Z" fill="#f0f7f8"/>
   </svg>
 </section>
 
 <!-- ABOUT, NEUMORPHIC -->
-<section class="neu-section" id="about">
-  <div class="neu-inner">
-    <div style="display:grid;grid-template-columns:340px 1fr;gap:4.5rem;align-items:center;">
+<!-- ABOUT — full-bleed two-column like hero -->
+<section class="about-section" id="about">
 
-      <div class="sr d1" style="aspect-ratio:4/5;overflow:hidden;border-radius:22px;cursor:pointer;
-           box-shadow:10px 10px 24px rgba(0,0,0,0.18),-8px -8px 18px rgba(255,255,255,0.72);"
-           onclick="openLightbox(this.querySelector('img').src,'About photo')">
-        <img src="images/about.jpeg" alt="Dr. Jood Al Aswad"
-             style="width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(1.12) saturate(0.9);">
-      </div>
+  <!-- Left: full-bleed photo -->
+  <div class="about-photo-col" onclick="openLightbox(this.querySelector('img').src,'About photo')" style="cursor:pointer;">
+    <img src="images/about.jpeg" alt="Dr. Jood Al Aswad">
+  </div>
 
-      <div>
-        <span class="eyebrow sr d1">The Researcher</span>
-        <h2 class="section-headline sr d2">Scientist, data thinker,<br><em>storyteller.</em></h2>
+  <!-- Right: glass content panel -->
+  <div class="about-inner">
+    <div class="neu-inner" style="max-width:760px;">
+      <span class="eyebrow sr d1">The Researcher</span>
+      <h2 class="section-headline sr d2">Scientist, data thinker,<br><em>storyteller.</em></h2>
 
-        <div class="sr d3">
-          <span class="eyebrow" style="margin-bottom:.75rem;">Who is Dr. Jood?</span>
-          <p style="margin-bottom:1rem;">I study how ocean life survives Earth's worst catastrophes in deep time. I aim to understand what traits tip the balance between extinction and endurance by using physiology, ocean conditions, and evolutionary history to explain who survives global crises and how.</p>
-          <p style="margin-bottom:1rem;">For my postdoc, I use statistical modeling alongside Late Pleistocene and Holocene fossils to reconstruct what ocean communities looked like before humans started degrading them, building a data-driven baseline for understanding extinction drivers.</p>
-          <p>Many marine ecosystems were already unrecognizable by the time modern ecology arrived to study them. <strong>The fossil record is how we recover that baseline.</strong></p>
-        </div>
+      <div class="sr d3">
+        <span class="eyebrow" style="margin-bottom:.75rem;">Who is Dr. Jood?</span>
+        <p style="margin-bottom:1rem;">I study how ocean life survives Earth's worst catastrophes in deep time. I aim to understand what traits tip the balance between extinction and endurance by using physiology, ocean conditions, and evolutionary history to explain who survives global crises and how.</p>
+        <p style="margin-bottom:1rem;">For my postdoc, I use statistical modeling alongside Late Pleistocene and Holocene fossils to reconstruct what ocean communities looked like before humans started degrading them, building a data-driven baseline for understanding extinction drivers.</p>
+        <p>Many marine ecosystems were already unrecognizable by the time modern ecology arrived to study them. <strong>The fossil record is how we recover that baseline.</strong></p>
       </div>
     </div>
+  </div>
 
-    <!-- Why This Work Matters, stat cards -->
+  <!-- Wave bottom of about → content -->
+  <svg class="about-wave-bottom" height="70" viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,30 C360,70 720,0 1080,40 C1260,58 1360,20 1440,35 L1440,70 L0,70 Z" fill="#ffffff"/>
+  </svg>
+</section>
+
+<!-- REST OF ABOUT CONTENT -->
+<section class="neu-section" style="background:#ffffff;">
+  <div class="neu-inner">
     <div style="padding-top:7rem;">
       <span class="eyebrow sr d1">Why this work matters</span>
       <h2 class="section-headline sr d2">To save our reefs, we need to know<br><em>what we're losing.</em></h2>
@@ -153,42 +160,50 @@
       <span class="eyebrow sr d1">Education &amp; Training</span>
       <h2 class="section-headline sr d2">A path through<br><em>the deep time sciences.</em></h2>
 
-      <div class="sr d3" style="margin-top:2rem;">
-        <div class="edu-item">
-          <div class="edu-year">Now</div>
-          <div class="edu-degree">
-            <strong>Postdoctoral Fellow</strong>
-            Virginia Tech · Dr. Pedro Monarrez's Lab. Coral reefs, metabolic index, invasive species, and quantitative ecology.
+      <div style="display:grid;grid-template-columns:1fr minmax(260px,380px);gap:4rem;align-items:start;margin-top:2rem;">
+
+        <div class="sr d3">
+          <div class="edu-item">
+            <div class="edu-year">Now</div>
+            <div class="edu-degree">
+              <strong>Postdoctoral Fellow</strong>
+              Virginia Tech · Dr. Pedro Monarrez's Lab. Coral reefs, metabolic index, invasive species, and quantitative ecology.
+            </div>
           </div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-year">2025</div>
-          <div class="edu-degree">
-            <strong>Ph.D. Geological Sciences (Paleobiology)</strong>
-            Stanford University · Dr. Jonathan Payne. Linking biogeographic patterns in deep time to extinction, physiology, and climate change.
-            <em>Winifred Goldring Award · Stanford Centennial TA Award</em>
-            <div style="margin-top:1.2rem;">
-              <video src="images/defense-flyer.mp4" autoplay loop muted playsinline
-                     style="width:100%;max-width:340px;border-radius:10px;box-shadow:4px 4px 14px rgba(0,0,0,0.18);display:block;"></video>
-              <p style="font-size:0.82rem;color:var(--ink-mid);margin:0.6rem 0 0;line-height:1.5;">My Ph.D. defense flyer, illustrated by me.</p>
+          <div class="edu-item">
+            <div class="edu-year">2025</div>
+            <div class="edu-degree">
+              <strong>Ph.D. Geological Sciences (Paleobiology)</strong>
+              Stanford University · Dr. Jonathan Payne. Linking biogeographic patterns in deep time to extinction, physiology, and climate change.
+              <em>Winifred Goldring Award · Stanford Centennial TA Award</em>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-year">2019</div>
+            <div class="edu-degree">
+              <strong>M.S. Geological Sciences</strong>
+              Cornell University · Dr. Terry Jordan. Stratigraphy, petrophysics &amp; geothermal systems.
+              <em>Harriet Benson Research Fellowship Award</em>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-year">2016</div>
+            <div class="edu-degree">
+              <strong>B.S. Earth Science</strong>
+              George Mason University · Dr. Linda Hinnov. Geodesy and Earth tides.
             </div>
           </div>
         </div>
-        <div class="edu-item">
-          <div class="edu-year">2019</div>
-          <div class="edu-degree">
-            <strong>M.S. Geological Sciences</strong>
-            Cornell University · Dr. Terry Jordan. Stratigraphy, petrophysics &amp; geothermal systems.
-            <em>Harriet Benson Research Fellowship Award</em>
-          </div>
+
+        <!-- Defense flyer — floats right of edu list on desktop -->
+        <div class="sr d4" style="display:flex;flex-direction:column;align-items:flex-start;position:sticky;top:6rem;">
+          <video src="images/defense-flyer.mp4" autoplay loop muted playsinline
+                 style="width:100%;border-radius:10px;
+                        box-shadow:8px 8px 24px rgba(0,0,0,0.22),-4px -4px 14px rgba(255,255,255,0.7);
+                        display:block;"></video>
+          <p style="font-size:0.78rem;color:var(--ink-mid);margin:0.75rem 0 0;line-height:1.55;font-style:italic;">My Ph.D. defense flyer, illustrated by me.</p>
         </div>
-        <div class="edu-item">
-          <div class="edu-year">2016</div>
-          <div class="edu-degree">
-            <strong>B.S. Earth Science</strong>
-            George Mason University · Dr. Linda Hinnov. Geodesy and Earth tides.
-          </div>
-        </div>
+
       </div>
     </div>
 
@@ -242,10 +257,11 @@
   </div><!-- /.neu-inner -->
 </section>
 
-<!-- WAVE TRANSITION -->
-<svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;background:#2a6070;margin-bottom:-2px;">
-  <path d="M0,25 C360,52 720,-2 1080,25 C1260,38 1360,14 1440,25 L1440,50 L0,50 Z" fill="#1a3d4a"/>
-</svg>
+<div class="wave-divider" style="display:block;background:#ffffff;margin-bottom:-2px;line-height:0;">
+  <svg height="60" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;">
+    <path d="M0,25 C300,65 600,5 900,48 C1100,72 1300,18 1440,40 L1440,70 L0,70 Z" fill="#b8d8e2"/>
+  </svg>
+</div>
 
 <!-- PULL QUOTE / CTA BAND -->
 <section class="dark-band" style="padding:5rem 3rem;">

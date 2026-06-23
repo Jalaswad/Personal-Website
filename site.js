@@ -2,16 +2,67 @@
 
 // --- SCROLL REVEAL ---
 document.addEventListener('DOMContentLoaded', () => {
-  const io = new IntersectionObserver(entries => {
+
+  // Spring-entrance for individual .sr elements
+  const srIO = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      if (e.isIntersecting) { e.target.classList.add('visible'); srIO.unobserve(e.target); }
     });
-  }, { threshold: 0.05, rootMargin: '0px 0px 80px 0px' });
+  }, { threshold: 0.06, rootMargin: '0px 0px 80px 0px' });
+
   document.querySelectorAll('.sr').forEach(el => {
     const r = el.getBoundingClientRect();
     (r.top < window.innerHeight && r.bottom > 0)
       ? el.classList.add('visible')
-      : io.observe(el);
+      : srIO.observe(el);
+  });
+
+  // Whole-section block reveals
+  const sectionIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); sectionIO.unobserve(e.target); }
+    });
+  }, { threshold: 0.04, rootMargin: '0px 0px 60px 0px' });
+
+  document.querySelectorAll('.section-reveal').forEach(el => {
+    const r = el.getBoundingClientRect();
+    (r.top < window.innerHeight && r.bottom > 0)
+      ? el.classList.add('visible')
+      : sectionIO.observe(el);
+  });
+
+  // Card grid stagger — triggers when grid scrolls into view
+  const cardIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('cards-visible'); cardIO.unobserve(e.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px 60px 0px' });
+
+  document.querySelectorAll('.neu-grid-2, .neu-grid-3').forEach(grid => {
+    // Remove any .sr class from child cards so the grid observer drives them
+    grid.querySelectorAll('.neu-card').forEach(c => c.classList.remove('sr'));
+    const r = grid.getBoundingClientRect();
+    (r.top < window.innerHeight && r.bottom > 0)
+      ? grid.classList.add('cards-visible')
+      : cardIO.observe(grid);
+  });
+
+  // Pub cards stagger — slide in from left with increasing delay
+  const pubIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('pub-visible');
+        pubIO.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px 40px 0px' });
+
+  document.querySelectorAll('.pub-card').forEach((card, i) => {
+    card.style.transitionDelay = (i * 0.13) + 's';
+    const r = card.getBoundingClientRect();
+    (r.top < window.innerHeight && r.bottom > 0)
+      ? card.classList.add('pub-visible')
+      : pubIO.observe(card);
   });
 
   // --- ACTIVE NAV LINK ---
@@ -85,26 +136,50 @@ function initTimeline() {
   window.addEventListener('resize', updateFill, { passive: true });
 }
 
-// --- RARE FISH ---
+// --- FISH SWIMMERS ---
 (function spawnPageFish() {
   const seed = document.querySelector('.fish-seed');
   if (!seed) return;
-  function spawnOne() {
-    const fish = document.createElement('div');
-    fish.className = 'fish';
-    const size     = 14 + Math.random() * 12;
-    const top      = 20 + Math.random() * 65;
-    const duration = 90 + Math.random() * 60;
-    fish.style.cssText = `position:fixed;top:${top}vh;animation-duration:${duration}s;width:${size}px;`;
-    fish.style.filter = 'drop-shadow(0 0 5px rgba(58,139,170,0.55)) drop-shadow(0 0 10px rgba(58,139,170,0.28))';
-    const img = document.createElement('img');
-    img.src = seed.src; img.alt = '';
-    fish.appendChild(img);
-    document.body.appendChild(fish);
-    setTimeout(() => { fish.remove(); scheduleNext(); }, duration * 1000);
-  }
-  function scheduleNext() { setTimeout(spawnOne, 18000 + Math.random() * 30000); }
-  scheduleNext();
+
+  // Wait for full page load so document height is accurate
+  window.addEventListener('load', function startFish() {
+
+    // Six vertical lanes as fractions of total document height
+    // Spread evenly so fish appear throughout the page as you scroll
+    const lanesFrac = [0.08, 0.22, 0.37, 0.52, 0.66, 0.80];
+    let laneIdx = 0;
+
+    function spawnOne() {
+      const fish = document.createElement('div');
+      fish.className = 'fish';
+
+      const size     = 14 + Math.random() * 13;   // 14–27 px
+      const duration = 32 + Math.random() * 20;   // 32–52 s — leisurely drift
+
+      // Pick lane round-robin, compute absolute px from doc height
+      const frac   = lanesFrac[laneIdx % lanesFrac.length];
+      laneIdx++;
+      const docH   = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+      const topPx  = frac * docH + (Math.random() * 80 - 40); // ±40px jitter
+
+      fish.style.cssText = `top:${topPx}px;animation-duration:${duration}s;width:${size}px;`;
+      fish.style.filter  = 'drop-shadow(0 0 4px rgba(58,139,170,0.5)) drop-shadow(0 0 10px rgba(58,139,170,0.25))';
+
+      const img = document.createElement('img');
+      img.src = seed.src; img.alt = '';
+      fish.appendChild(img);
+      document.body.appendChild(fish);
+
+      // Remove after swim completes
+      setTimeout(() => fish.remove(), (duration + 2) * 1000);
+
+      // Next fish: 6–12 s after this one starts
+      setTimeout(spawnOne, (6 + Math.random() * 6) * 1000);
+    }
+
+    // First fish after 2–4 s
+    setTimeout(spawnOne, 2000 + Math.random() * 2000);
+  });
 })();
 
 // --- LIGHTBOX ---
