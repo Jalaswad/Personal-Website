@@ -188,20 +188,6 @@ nav {
 .hero-affil-inst { font-size:0.78rem; color:var(--ink-mid); margin-top:0.2rem; }
 
 /* Hero type — dark text on light glass */
-.hero-eyebrow {
-  font-size:0.82rem; letter-spacing:0.34em; text-transform:uppercase;
-  font-family:var(--serif); font-style:italic; font-weight:400;
-  color:var(--teal); margin-bottom:1.1rem; display:block;
-  padding-top:0.85rem; position:relative;
-}
-.hero-eyebrow::before {
-  content:'';
-  position:absolute;
-  top:0; left:0;
-  width:3.5rem; height:3px;
-  background:#ed6f72;
-  border-radius:999px;
-}
 .hero-hi {
   font-family:var(--serif); font-size:1.05rem; font-weight:300;
   color:var(--ink-mid); margin-bottom:0.1rem; font-style:italic;
@@ -356,7 +342,7 @@ nav {
   content:'';
   position:absolute;
   top:0; left:0;
-  width:3.5rem;
+  width:10rem;
   height:3px;
   background:#ed6f72;
   border-radius:999px;
