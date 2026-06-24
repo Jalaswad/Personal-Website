@@ -330,7 +330,7 @@ nav {
 /* ============================================================
    CONTENT SECTIONS — light background
    ============================================================ */
-.neu-section { background:var(--bg); padding:8rem 4rem; position:relative; }
+.neu-section { background:#ffffff; padding:8rem 4rem; position:relative; }
 .neu-inner  { max-width:var(--max-w); margin:0 auto; }
 .neu-inner > div + div { margin-top:8rem; }
 .neu-narrow { max-width:var(--narrow); margin:0 auto; }
@@ -691,7 +691,7 @@ nav {
 /* ============================================================
    CONTACT FORM
    ============================================================ */
-.contact-section { background:var(--bg); padding:7rem 3rem; }
+.contact-section { background:#ffffff; padding:7rem 3rem; }
 .contact-inner { max-width:580px; margin:0 auto; text-align:center; }
 .contact-form {
   background:#ffffff; border-radius:22px; padding:2.5rem;
