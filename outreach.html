@@ -70,18 +70,24 @@
 
 
     <!-- Photo gallery --></div><!-- close neu-inner early -->
-    <div class="photo-grid-fullbleed sr d4" style="margin-top:3rem;">
-      <div class="photo-cell" style="aspect-ratio:5/4;">
-        <img src="images/interns.JPEG" alt="With interns and Dr. Pedro Monarrez at Capitola Beach">
-        <div class="photo-label">With interns &amp; Dr. Pedro Monarrez · Capitola Beach</div>
+    <div class="circle-gallery sr d4" style="margin-top:3rem;">
+      <div class="circle-item">
+        <div class="circle-photo" onclick="openLightbox(this.querySelector('img').src,'With interns &amp; Dr. Pedro Monarrez · Capitola Beach')">
+          <img src="images/interns.JPEG" alt="With interns and Dr. Pedro Monarrez at Capitola Beach">
+        </div>
+        <p class="circle-caption">With interns &amp; Dr. Pedro Monarrez · Capitola Beach</p>
       </div>
-      <div class="photo-cell" style="aspect-ratio:5/4;">
-        <img src="images/DEEP-S.png" alt="DEEP Award, Sofía Barragán Montilla">
-        <div class="photo-label">DEEP Award · Sofía Barragán Montilla</div>
+      <div class="circle-item">
+        <div class="circle-photo" onclick="openLightbox(this.querySelector('img').src,'DEEP Award · Sofía Barragán Montilla')">
+          <img src="images/DEEP-S.png" alt="DEEP Award, Sofía Barragán Montilla">
+        </div>
+        <p class="circle-caption">DEEP Award · Sofía Barragán Montilla</p>
       </div>
-      <div class="photo-cell" style="aspect-ratio:5/4;">
-        <img src="images/DEEP-J.png" alt="DEEP Award, Jennifer Bauer">
-        <div class="photo-label">DEEP Award · Jennifer Bauer</div>
+      <div class="circle-item">
+        <div class="circle-photo" onclick="openLightbox(this.querySelector('img').src,'DEEP Award · Jennifer Bauer')">
+          <img src="images/DEEP-J.png" alt="DEEP Award, Jennifer Bauer">
+        </div>
+        <p class="circle-caption">DEEP Award · Jennifer Bauer</p>
       </div>
     </div>
 
@@ -91,29 +97,37 @@
     <path d="M0,25 C300,65 600,5 900,48 C1100,72 1300,18 1440,40 L1440,70 L0,70 Z" fill="#e2f4f7"/>
   </svg>
 </div>
-<!-- ART SECTION, DARK TRANSITION -->
+<!-- ART SECTION -->
 
-<section style="background:#ffffff;padding:7rem 3rem 0;">
+<section style="background:#ffffff;padding:7rem 3rem 4rem;">
     <span class="eyebrow sr d1">Art &amp; Creative Work</span>
     <h2 class="section-headline sr d2">Science and imagination,<br><em>intertwined.</em></h2>
     <p class="section-lead sr d3">I draw digitally and with charcoal, live-sketching talks, making portraits in Procreate, and producing science illustrations. My team won top video for best storytelling at Stanford's BioX 2020. And I'm writing a high fantasy novel woven through with biology and geology, drawing on my own culture.</p>
 
-    <div class="photo-grid-fullbleed art-4 sr d4" style="margin-top:2.5rem;">
-      <div class="photo-cell" style="aspect-ratio:4/5;">
-        <img src="https://static.wixstatic.com/media/f339c1_e14171cfd04044788d6eb020939a7cc6~mv2.png/v1/fill/w_518,h_522,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/AWhit-JAA.png" alt="Live sketch">
-        <div class="photo-label">Live sketch</div>
+    <div class="circle-gallery circle-gallery-4 sr d4" style="margin-top:2.5rem;">
+      <div class="circle-item">
+        <div class="circle-photo" onclick="openLightbox(this.querySelector('img').src,'Live sketch')">
+          <img src="https://static.wixstatic.com/media/f339c1_e14171cfd04044788d6eb020939a7cc6~mv2.png/v1/fill/w_518,h_522,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/AWhit-JAA.png" alt="Live sketch">
+        </div>
+        <p class="circle-caption">Live sketch</p>
       </div>
-      <div class="photo-cell" style="aspect-ratio:4/5;">
-        <img src="https://static.wixstatic.com/media/f339c1_8a5f7977638d449393efda5fcb41625f~mv2.png/v1/fill/w_524,h_524,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/RShap-JAA.png" alt="Digital portrait">
-        <div class="photo-label">Digital portrait</div>
+      <div class="circle-item">
+        <div class="circle-photo" onclick="openLightbox(this.querySelector('img').src,'Digital portrait')">
+          <img src="https://static.wixstatic.com/media/f339c1_8a5f7977638d449393efda5fcb41625f~mv2.png/v1/fill/w_524,h_524,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/RShap-JAA.png" alt="Digital portrait">
+        </div>
+        <p class="circle-caption">Digital portrait</p>
       </div>
-      <div class="photo-cell" style="aspect-ratio:4/5;">
-        <img src="https://static.wixstatic.com/media/f339c1_96e9436089b34af58b08847a145efa16~mv2.jpeg/v1/fill/w_570,h_374,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/f339c1_96e9436089b34af58b08847a145efa16~mv2.jpeg" alt="Meet the Scientist">
-        <div class="photo-label">Meet the Scientist</div>
+      <div class="circle-item">
+        <div class="circle-photo" onclick="openLightbox(this.querySelector('img').src,'Meet the Scientist')">
+          <img src="https://static.wixstatic.com/media/f339c1_96e9436089b34af58b08847a145efa16~mv2.jpeg/v1/fill/w_570,h_374,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/f339c1_96e9436089b34af58b08847a145efa16~mv2.jpeg" alt="Meet the Scientist">
+        </div>
+        <p class="circle-caption">Meet the Scientist</p>
       </div>
-      <div class="photo-cell" style="aspect-ratio:4/5;">
-        <img src="https://static.wixstatic.com/media/f339c1_c716c165f4f640fcb2748a8300d07277~mv2.jpg/v1/fill/w_438,h_591,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/f339c1_c716c165f4f640fcb2748a8300d07277~mv2.jpg" alt="Digital art">
-        <div class="photo-label">Digital art</div>
+      <div class="circle-item">
+        <div class="circle-photo" onclick="openLightbox(this.querySelector('img').src,'Digital art')">
+          <img src="https://static.wixstatic.com/media/f339c1_c716c165f4f640fcb2748a8300d07277~mv2.jpg/v1/fill/w_438,h_591,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/f339c1_c716c165f4f640fcb2748a8300d07277~mv2.jpg" alt="Digital art">
+        </div>
+        <p class="circle-caption">Digital art</p>
       </div>
     </div>
 </section>
