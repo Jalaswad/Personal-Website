@@ -1,8 +1,4 @@
-/* ============================================================
-   DR. JOOD AL ASWAD — SITE CSS v3
-   seafoam white body, dark neumorphic cards,
-   glassmorphic hero, Nunito + Cormorant Garamond
-   ============================================================ */
+
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
@@ -10,36 +6,36 @@
   --serif:  'DM Serif Display', Georgia, serif;
   --sans:   'Nunito', system-ui, sans-serif;
 
-  /* Page surface — seafoam white */
+  
   --bg:       #f0f7f8;
-  --bg-card:  #f8fcfd;   /* slightly lighter for card-on-bg use */
+  --bg-card:  #f8fcfd;   
 
-  /* Light blue neumorphic card */
-  --card-bg:   #cfe8ed;
+  
+  --card-bg:   #eef6f8;
   --card-dark: #aac8d0;
   --card-lt:   #ffffff;
 
-  /* Text on light background */
+  
   --ink:     #111111;
   --ink-mid: #333333;
   --ink-lt:  #666666;
 
-  /* Text on light blue cards */
+  
   --card-text:  #111111;
   --card-muted: #333333;
   --card-label: #2a6070;
 
-  /* Accents — keep your ocean palette */
-  --teal:   #3a8baa;
-  --teal-d: #2a6070;
+  
+  --teal:   #1a8fa8;
+  --teal-d: #126e82;
   --cyan:   #7ee8ff;
-  --gold:   #c8a020;    /* warmer gold on light bg */
-  --gold-lt:#fff0a0;    /* light gold for dark cards */
-  --coral:  #f5a8c0;
+  --gold:   #c8a020;    
+  --gold-lt:#fff0a0;    
+  --coral:  #1a8fa8;
 
-  /* Hero glass */
+  
   --glass-bg:     rgba(255,255,255,0.45);
-  --glass-border: rgba(58,139,170,0.22);
+  --glass-border: rgba(156,218,219,0.3);
 
   --max-w: 1440px;
   --narrow: 860px;
@@ -59,9 +55,6 @@ p { line-height:1.82; letter-spacing:0.01em; font-weight:400; }
 a { color:inherit; text-decoration:none; }
 img { display:block; }
 
-/* ============================================================
-   NAVIGATION
-   ============================================================ */
 nav {
   position:fixed; top:0; left:0; right:0; z-index:300;
   display:flex; justify-content:space-between; align-items:center;
@@ -116,10 +109,6 @@ nav {
   .nav-links a { display:block; padding:1rem 0.5rem; border-bottom:none; }
 }
 
-/* ============================================================
-   HERO — LIGHT GLASSMORPHISM
-   Bright gradient, bokeh teal orbs, white frosted panel
-   ============================================================ */
 .page-hero {
   min-height:100vh;
   position:relative;
@@ -162,7 +151,6 @@ nav {
   to   { opacity:1;   transform:translate(var(--tx,30px),var(--ty,-20px)) scale(var(--ts,1.08)); }
 }
 
-/* Hero glass panel */
 .hero-inner {
   position:relative; z-index:2;
   padding:8rem 5rem 4rem 7vw;
@@ -187,7 +175,6 @@ nav {
 .hero-affil-role { font-size:0.88rem; color:var(--teal); font-weight:600; letter-spacing:0.04em; }
 .hero-affil-inst { font-size:0.78rem; color:var(--ink-mid); margin-top:0.2rem; }
 
-/* Hero type — dark text on light glass */
 .hero-hi {
   font-family:var(--serif); font-size:1.05rem; font-weight:300;
   color:var(--ink-mid); margin-bottom:0.1rem; font-style:italic;
@@ -227,7 +214,6 @@ nav {
   .hero-name { font-size:clamp(2.2rem,10vw,3.2rem); }
 }
 
-/* Fish */
 .fish { position:absolute; pointer-events:none; opacity:0; animation:swimRight linear 1 forwards; z-index:1; }
 .fish img { width:100%; height:auto; }
 @keyframes swimRight {
@@ -237,9 +223,6 @@ nav {
   to   { transform:translateX(calc(100vw + 140px)); opacity:0; }
 }
 
-/* ============================================================
-   ABOUT SECTION — full-bleed two-column mirroring hero
-   ============================================================ */
 .about-section {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
@@ -249,7 +232,7 @@ nav {
   overflow: hidden;
   position: relative;
 }
-/* Wave that sits at the bottom of about-section */
+
 .about-wave-bottom {
   position: absolute;
   bottom: 0; left: 0; right: 0;
@@ -299,7 +282,6 @@ nav {
   }
 }
 
-
 .section-intro {
   padding:7rem 5rem 4rem;
   background:linear-gradient(150deg,#c8e8f0 0%,#daf0f5 40%,#f0f7f8 100%);
@@ -322,15 +304,11 @@ nav {
   color:var(--ink-mid); max-width:640px;
 }
 
-/* ============================================================
-   CONTENT SECTIONS — light background
-   ============================================================ */
 .neu-section { background:#ffffff; padding:8rem 4rem; position:relative; }
 .neu-inner  { max-width:var(--max-w); margin:0 auto; }
 .neu-inner > div + div { margin-top:8rem; }
 .neu-narrow { max-width:var(--narrow); margin:0 auto; }
 
-/* Section headers on light background */
 .eyebrow {
   font-size:0.66rem; letter-spacing:0.32em; text-transform:uppercase;
   font-weight:700; color:#1e6070;
@@ -362,10 +340,6 @@ nav {
   max-width:680px; margin-bottom:3rem;
 }
 
-/* ============================================================
-   NEUMORPHIC CARDS — dark panels on light page
-   Light comes from top-left; dark shadow bottom-right
-   ============================================================ */
 .neu-card {
   background:var(--card-bg);
   border-radius:20px;
@@ -377,17 +351,19 @@ nav {
   box-shadow:9px 9px 20px var(--card-dark),-6px -6px 16px var(--card-lt);
   transform:translateY(-2px);
 }
+.neu-card.accent-pink  { background: #e8f4f8; }
+.neu-card.accent-cyan  { background: #fdf6f0; }
+.neu-card.accent-gold  { background: #e8f4f8; }
+.neu-card.accent-teal  { background: #fdf6f0; }
 .neu-card.accent-pink,.neu-card.accent-cyan,
 .neu-card.accent-gold,.neu-card.accent-teal {
   box-shadow:7px 7px 16px var(--card-dark),-5px -5px 13px var(--card-lt);
 }
 
-/* Card grids */
 .neu-grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:2rem; }
 .neu-grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1.75rem; }
 @media (max-width:880px) { .neu-grid-2,.neu-grid-3 { grid-template-columns:1fr; } }
 
-/* Card internals */
 .neu-card-num {
   font-family:var(--serif); font-size:2.4rem; font-weight:400;
   color:var(--teal-d); line-height:1; margin-bottom:0.75rem;
@@ -406,12 +382,6 @@ nav {
 .neu-stat-head { font-family:var(--sans); font-size:1.15rem; font-weight:700; color:#111111; margin-bottom:0.5rem; line-height:1.3; }
 .neu-stat-body { font-size:1rem; line-height:1.78; color:#333333; }
 
-/* ============================================================
-   BUTTONS — liquid wave-rise on hover
-   ::before starts well below the button. Its top edge has a
-   very subtle curve (small border-radius) so as it rises the
-   crest sweeps through — tight enough to never peek at rest.
-   ============================================================ */
 .btn-solid,
 .btn-ghost {
   display: inline-block;
@@ -432,39 +402,37 @@ nav {
 .btn-ghost::before {
   content: '';
   position: absolute;
-  top: 105%;               /* starts just below the visible button */
+  top: 105%;               
   left: -5%;
   width: 110%;
   height: 110%;
-  /* Very subtle wave crest — just 12% / 6% — barely perceptible curve */
+  
   border-radius: 50% 50% 0 0 / 12% 12% 0 0;
   transition: top 1.1s cubic-bezier(0.22, 1, 0.36, 1);
   z-index: -1;
 }
 .btn-solid:hover::before,
 .btn-ghost:hover::before {
-  top: -10%;               /* rise up to fill the button */
+  top: -10%;               
 }
 
 .btn-solid {
-  background: var(--teal);
-  color: #ffffff;
-  box-shadow: 0 4px 14px rgba(58,139,170,0.3);
+  background: transparent;
+  color: #1a8fa8;
+  border: 1.5px solid #1a8fa8;
+  box-shadow: none;
 }
-.btn-solid::before { background: var(--teal-d); }
-.btn-solid:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(58,139,170,0.42); }
+.btn-solid::before { background: #1a8fa8; }
+.btn-solid:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(46,109,142,0.3); }
 
 .btn-ghost {
   background: transparent;
-  border: 1.5px solid var(--teal);
-  color: var(--teal);
+  border: 1.5px solid #1a8fa8;
+  color: #1a8fa8;
 }
-.btn-ghost::before { background: var(--teal); }
-.btn-ghost:hover { color: #ffffff; transform: translateY(-2px); box-shadow: 0 6px 22px rgba(58,139,170,0.28); }
+.btn-ghost::before { background: #1a8fa8; }
+.btn-ghost:hover { color: #ffffff; transform: translateY(-2px); box-shadow: 0 6px 22px rgba(46,109,142,0.28); }
 
-/* ============================================================
-   PUBLICATION CARDS
-   ============================================================ */
 .pub-card {
   display:grid; grid-template-columns:52px 1fr; gap:1.5rem;
   align-items:start; padding:1.75rem 2rem;
@@ -474,6 +442,8 @@ nav {
   margin-bottom:1.25rem; transition:box-shadow 0.9s, transform 0.9s;
   position:relative; overflow:hidden;
 }
+.pub-card:nth-child(odd)  { background: #e8f4f8; }
+.pub-card:nth-child(even) { background: #fdf6f0; }
 .pub-card::before {
   content:''; position:absolute; left:0; top:50%;
   transform:translateY(-50%); width:3px; height:55%;
@@ -501,16 +471,12 @@ nav {
 }
 .pub-tag:hover { background:var(--teal); color:#fff; border-color:var(--teal); }
 
-/* ============================================================
-   RESEARCH TIMELINE — inline glowing line, no sticky sidebar
-   ============================================================ */
 .research-layout {
   display:block;
   position:relative;
   padding-left:3rem;
 }
 
-/* The continuous vertical line on the left */
 .research-layout::before {
   content:'';
   position:absolute;
@@ -519,7 +485,6 @@ nav {
   border-radius:3px;
 }
 
-/* Glowing fill — grows via JS as panels enter view */
 .tl-fill {
   position:absolute;
   left:0.9rem; top:0; width:3px;
@@ -531,7 +496,6 @@ nav {
   pointer-events:none;
 }
 
-/* Each panel */
 .rp-panel {
   position:relative;
   padding-bottom:5rem; margin-bottom:5rem;
@@ -539,7 +503,6 @@ nav {
 }
 .rp-panel:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
 
-/* Node dot on the line */
 .rp-panel::before {
   content:'';
   position:absolute;
@@ -552,7 +515,6 @@ nav {
   z-index:2;
 }
 
-/* Active panel: coral glow on dot */
 .rp-panel.in-view::before {
   background:#e87070;
   border-color:#e87070;
@@ -560,7 +522,6 @@ nav {
   box-shadow:0 0 0 4px rgba(232,112,112,0.15), 0 0 14px rgba(232,112,112,0.8), 0 0 28px rgba(232,112,112,0.4);
 }
 
-/* Hide old sticky timeline nav */
 .timeline-nav { display:none !important; }
 
 @media (max-width:880px) {
@@ -571,7 +532,6 @@ nav {
   .rp-panel.in-view::before { left:-2rem; top:1.3rem; width:16px; height:16px; }
 }
 
-/* Research panels */
 .rp-era { font-size:0.66rem; letter-spacing:0.26em; text-transform:uppercase; color:var(--ink-lt); font-weight:700; margin-bottom:0.4rem; }
 .rp-scale { font-family:var(--serif); font-size:0.92rem; font-style:italic; color:var(--ink-mid); margin-bottom:0.65rem; }
 .rp-title { font-family:var(--serif); font-size:1.7rem; font-weight:400; color:var(--ink); margin-bottom:0.9rem; line-height:1.2; }
@@ -580,10 +540,6 @@ nav {
 .rp-panel { padding-bottom:5rem; margin-bottom:5rem; border-bottom:1px solid rgba(58,139,170,0.15); }
 .rp-panel:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
 
-/* ============================================================
-   CIRCLE PHOTO GALLERY
-   Large circular photos centered with caption below.
-   ============================================================ */
 .circle-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -646,11 +602,6 @@ nav {
   .circle-gallery, .circle-gallery-4 { grid-template-columns: 1fr; gap: 2rem; }
 }
 
-/* ============================================================
-   FULL-BLEED PHOTO GRID
-   Breaks out of neu-inner max-width using negative margins
-   so images span the full monitor width.
-   ============================================================ */
 .photo-grid-fullbleed {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -670,7 +621,6 @@ nav {
   opacity: 1;
 }
 
-/* 4-image art gallery — 4 columns */
 .photo-grid-fullbleed.art-4 {
   grid-template-columns: repeat(4, 1fr);
 }
@@ -687,7 +637,6 @@ nav {
   .photo-grid-fullbleed.art-4 { grid-template-columns: 1fr; }
 }
 
-/* Research panel full-width image */
 .rp-fullbleed-img {
   width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -700,7 +649,6 @@ nav {
   .rp-fullbleed-img { width: 100%; margin-left: 0; padding: 0; }
   .rp-fullbleed-img .rp-body { padding: 0; }
 }
-
 
 .photo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2.5rem; }
 .photo-cell {
@@ -724,9 +672,6 @@ nav {
 @media (max-width:900px) { .photo-grid { grid-template-columns:repeat(2,1fr); } }
 @media (max-width:600px) { .photo-grid { grid-template-columns:1fr; } }
 
-/* ============================================================
-   SKILLS GRID
-   ============================================================ */
 .skills-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.25rem; margin-top:2.5rem; }
 .skill-block {
   background:var(--card-bg);
@@ -739,18 +684,12 @@ nav {
 .skill-list { list-style:none; font-size:1rem; color:#333333; line-height:2.1; }
 @media (max-width:880px) { .skills-grid { grid-template-columns:repeat(2,1fr); } }
 
-/* ============================================================
-   EDUCATION
-   ============================================================ */
 .edu-item { display:flex; gap:2rem; padding:1.4rem 0; border-top:1px solid rgba(58,139,170,0.15); align-items:flex-start; }
 .edu-year { font-family:var(--serif); font-size:1.5rem; color:var(--teal); white-space:nowrap; min-width:90px; padding-top:4px; flex-shrink:0; font-weight:400; }
 .edu-degree { font-size:0.96rem; color:var(--ink-mid); line-height:1.65; }
 .edu-degree strong { display:block; color:var(--ink); font-weight:700; font-size:1rem; margin-bottom:0.2rem; }
 .edu-degree em { font-style:italic; color:var(--teal); font-size:0.88rem; display:block; margin-top:0.3rem; }
 
-/* ============================================================
-   PULL QUOTE
-   ============================================================ */
 .pull-quote {
   font-family:var(--serif);
   font-size:clamp(1.5rem,2.8vw,2.4rem);
@@ -760,9 +699,6 @@ nav {
 }
 .pull-quote em { font-style:italic; color:var(--teal); }
 
-/* ============================================================
-   CONTACT FORM
-   ============================================================ */
 .contact-section { background:#ffffff; padding:7rem 3rem; }
 .contact-inner { max-width:580px; margin:0 auto; text-align:center; }
 .contact-form {
@@ -772,16 +708,16 @@ nav {
 }
 .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem; }
 .form-group { display:flex; flex-direction:column; gap:0.4rem; margin-bottom:1rem; }
-.form-label { font-size:0.65rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--ink-mid); font-weight:700; }
+.form-label { font-size:0.65rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--teal); font-weight:700; }
 .form-input,.form-textarea {
   width:100%; padding:0.9rem 1rem;
   font-family:var(--sans); font-size:0.95rem;
-  color:var(--ink); background:#f8fcfd;
-  border:1.5px solid rgba(58,139,170,0.22);
+  color:#1a3d4a; background:#f8fcfd;
+  border:1.5px solid rgba(46,109,142,0.25);
   border-radius:10px; outline:none; transition:all 0.28s;
 }
-.form-input::placeholder,.form-textarea::placeholder { color:var(--ink-lt); }
-.form-input:focus,.form-textarea:focus { border-color:var(--teal); box-shadow:0 0 0 3px rgba(58,139,170,0.12); background:#fff; }
+.form-input::placeholder,.form-textarea::placeholder { color:#a0bec8; }
+.form-input:focus,.form-textarea:focus { border-color:var(--teal); box-shadow:0 0 0 3px rgba(46,109,142,0.1); background:#fff; }
 .form-textarea { resize:vertical; min-height:120px; line-height:1.6; }
 .form-submit {
   width:100%; margin-top:1.4rem; padding:1.1rem 2rem;
@@ -794,9 +730,6 @@ nav {
 .form-submit:hover { background:var(--teal-d); transform:translateY(-2px); box-shadow:0 8px 24px rgba(58,139,170,0.3); }
 @media (max-width:600px) { .form-row { grid-template-columns:1fr; } }
 
-/* ============================================================
-   DARK BAND — pull quotes, CTAs
-   ============================================================ */
 .dark-band {
   background:#b8d8e2;
   padding:5rem 3rem;
@@ -804,9 +737,6 @@ nav {
 .dark-band .pull-quote { color:#111111; }
 .dark-band .pull-quote em { font-style:italic; color:var(--teal-d); }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
 footer {
   background:#b8d8e2; padding:1.75rem 3rem;
   display:flex; justify-content:space-between; align-items:center;
@@ -817,19 +747,11 @@ footer a { font-size:0.76rem; color:var(--teal-d); letter-spacing:0.08em; text-t
 footer a:hover { color:var(--teal); }
 @media (max-width:600px) { footer { flex-direction:column; gap:0.75rem; text-align:center; padding:1.5rem; } }
 
-/* Wave dividers between sections */
 .wave-divider { display:block; line-height:0; overflow:hidden; }
 .wave-divider svg { display:block; width:100%; }
 
-/* ============================================================
-   WAVE DIVIDERS
-   ============================================================ */
 .wave-down svg { display:block; width:100%; }
 .wave-up svg   { display:block; width:100%; }
-
-/* ============================================================
-   SCROLL REVEAL — staggered spring entrance
-   ============================================================ */
 
 .sr {
   opacity: 0;
@@ -844,7 +766,6 @@ footer a:hover { color:var(--teal); }
 .d1{transition-delay:0.08s;} .d2{transition-delay:0.20s;} .d3{transition-delay:0.34s;}
 .d4{transition-delay:0.50s;} .d5{transition-delay:0.66s;}
 
-/* Whole-section block reveal */
 .section-reveal {
   opacity: 0;
   transform: translateY(60px);
@@ -856,7 +777,6 @@ footer a:hover { color:var(--teal); }
   transition: opacity 1.0s cubic-bezier(0.16,1,0.3,1), transform 1.0s cubic-bezier(0.16,1,0.3,1);
 }
 
-/* Neu-cards stagger as a group */
 .neu-grid-2 .neu-card,
 .neu-grid-3 .neu-card {
   opacity: 0;
@@ -870,7 +790,6 @@ footer a:hover { color:var(--teal); }
 .neu-grid-2.cards-visible .neu-card:nth-child(3),.neu-grid-3.cards-visible .neu-card:nth-child(3){transition-delay:0.31s;}
 .neu-grid-2.cards-visible .neu-card:nth-child(4),.neu-grid-3.cards-visible .neu-card:nth-child(4){transition-delay:0.44s;}
 
-/* Pub cards slide in from left */
 .pub-card {
   opacity: 0;
   transform: translateX(-24px);
@@ -878,12 +797,8 @@ footer a:hover { color:var(--teal); }
 }
 .pub-card.pub-visible { opacity:1; transform:translateX(0); }
 
-/* ============================================================
-   MISC
-   ============================================================ */
 .flex-gap { display:flex; gap:1rem; flex-wrap:wrap; }
 
-/* Lightbox */
 #lightbox { display:none; position:fixed; inset:0; z-index:9999; background:rgba(2,8,20,.92); backdrop-filter:blur(12px); align-items:center; justify-content:center; cursor:zoom-out; }
 #lightbox.open { display:flex !important; }
 #lightbox.open #lightbox-img { transform:scale(1) !important; opacity:1 !important; }
@@ -893,12 +808,9 @@ footer a:hover { color:var(--teal); }
 #lightbox-close:hover { color:#7ee8ff; }
 #lightbox-caption { position:absolute; bottom:1.5rem; left:50%; transform:translateX(-50%); color:rgba(255,255,255,.85); font-family:var(--sans); font-size:.82rem; letter-spacing:.15em; text-transform:uppercase; }
 
-/* ============================================================
-   MOBILE — comprehensive responsive styles
-   ============================================================ */
 @media (max-width:768px) {
 
-  /* Hero: stack vertically, photo on top */
+  
   .page-hero {
     grid-template-columns:1fr;
     grid-template-rows:280px auto;
@@ -916,7 +828,7 @@ footer a:hover { color:var(--teal); }
   .hero-vision { max-width:100%; }
   .hero-name { font-size:clamp(2rem,8vw,3rem); }
 
-  /* About: stack photo / text / flyer vertically on mobile */
+  
   .neu-section { padding:4rem 1.25rem; }
   .neu-inner > div[style*="grid-template-columns:340px"],
   .neu-inner > div[style*="grid-template-columns:minmax"] {
@@ -928,52 +840,51 @@ footer a:hover { color:var(--teal); }
     border-radius:6px !important;
   }
 
-  /* Sub-section padding */
+  
   .neu-section { padding:4rem 1.5rem; }
   .neu-inner > div + div { padding-top:4rem !important; }
 
-  /* Cards: single column */
+  
   .neu-grid-2, .neu-grid-3 { grid-template-columns:1fr !important; }
 
-  /* Publications */
+  
   .pub-card { grid-template-columns:44px 1fr; gap:1rem; padding:1.25rem 1rem; }
   .pub-yr { font-size:0.9rem; }
 
-  /* Skills */
+  
   .skills-grid { grid-template-columns:1fr !important; }
 
-  /* Education */
+  
   .edu-item { grid-template-columns:52px 1fr; gap:1rem; }
 
-  /* Contact form */
+  
   .form-row { grid-template-columns:1fr !important; }
   .contact-grid { grid-template-columns:1fr !important; }
 
-  /* Research panels */
+  
   .rp-panel { padding-bottom:3rem; margin-bottom:3rem; }
   .rp-panel > div[style*="grid-template-columns"] { display:block !important; }
   .rp-panel > div[style*="grid-template-columns"] > div { margin-bottom:1.5rem; }
   .photo-cell { max-width:100% !important; }
 
-  /* Section intro headers */
+  
   .section-intro { padding:4rem 1.5rem 3rem; }
   .section-intro h1 { font-size:clamp(2rem,7vw,2.8rem); }
 
-  /* Section headlines */
+  
   .section-headline { font-size:clamp(1.6rem,6vw,2.2rem); }
 
-  /* Outreach */
+  
   .outreach-grid { grid-template-columns:1fr !important; }
 
-  /* Footer */
+  
   footer { flex-direction:column; gap:0.75rem; text-align:center; padding:1.5rem 1.25rem; }
 
-  /* Art gallery */
+  
   .art-grid { grid-template-columns:1fr !important; }
   .art-item.span2 { grid-column:auto !important; }
 }
 
-/* Slightly larger phones / small tablets */
 @media (max-width:480px) {
   .hero-name { font-size:2rem; }
   .section-headline { font-size:1.6rem; }
