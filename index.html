@@ -6,6 +6,85 @@
 <title> Jood, paleobiologist </title>
 <link rel="stylesheet" href="site.css">
 <link rel="stylesheet" href="effects-patch.css">
+<script>document.documentElement.className += ' js';</script>
+<style>
+/* ---- ABOUT PANEL -------------------------------------------------
+   .about-section in site.css is the page-level two-column grid
+   (1fr 1.4fr, min-height 100vh). The content blocks inside the glass
+   panel use .about-block so they do not inherit that grid. */
+.about-block + .about-block { margin-top: 4rem; }
+.about-block .eyebrow::before { width: 4rem; }
+
+/* ---- READABILITY -------------------------------------------------
+   The global reset zeroes every margin, so paragraphs need their own
+   spacing. 66ch keeps the line length under ~75 characters. */
+.prose {
+  max-width: 66ch;
+  font-size: 1.05rem;
+}
+.prose p {
+  margin: 0 0 1.4rem;
+  line-height: 1.9;
+}
+.prose p:last-child { margin-bottom: 0; }
+
+/* ---- ABOUT PHOTO -------------------------------------------------
+   The text column is long, so a stretched portrait gets cropped to a
+   tall narrow slice. Pin it instead. position:sticky needs an
+   ancestor that is not overflow:hidden. */
+.about-section { overflow: visible; }
+.about-photo-col {
+  align-self: start;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+@media (max-width: 768px) {
+  .about-photo-col { position: static; height: 60vw; max-height: 380px; }
+}
+
+/* ---- NO-JAVASCRIPT SAFETY NET ------------------------------------
+   .sr and friends start at opacity:0 and are only revealed by
+   site.js. If that script is blocked or throws, the page renders
+   blank. The inline script above adds .js to <html>. */
+html:not(.js) .sr,
+html:not(.js) .section-reveal,
+html:not(.js) .neu-grid-2 .neu-card,
+html:not(.js) .neu-grid-3 .neu-card,
+html:not(.js) .pub-card,
+html:not(.js) .rw-inner,
+html:not(.js) .section-float {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ---- REDUCED MOTION ----------------------------------------------
+   effects-patch.css covers .rw-inner, .section-float and the nav
+   underline only. These are the systems it misses. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0s !important;
+  }
+  .sr,
+  .section-reveal,
+  .neu-grid-2 .neu-card,
+  .neu-grid-3 .neu-card,
+  .pub-card { opacity: 1 !important; transform: none !important; }
+  .fish { display: none !important; }
+  .bokeh-orb { animation: none !important; opacity: 0.85 !important; }
+  .about-photo-col:hover img,
+  .circle-photo:hover,
+  .circle-photo:hover img,
+  .photo-cell:hover,
+  .photo-cell:hover img,
+  .neu-card:hover,
+  .pub-card:hover { transform: none !important; }
+}
+</style>
 </head>
 <body>
 
@@ -39,7 +118,7 @@
 
   <div class="hero-inner">
     <p class="hero-hi">Hi. I'm</p>
-    <h1 class="hero-name"><em>Jood.</em> </p></h1>
+    <h1 class="hero-name"><em>Jood.</em></h1>
     <p class="hero-tagline">The ocean's past is a warning we haven't finished reading.</p>
     <p class="hero-vision">
       Earth's oceans have faced catastrophe before.<br><br>
@@ -80,33 +159,35 @@
 <div class="about-inner">
   <div class="neu-inner">
 
-    <section class="about-section">
+    <section class="about-block">
       <h2 class="eyebrow sr d1">The Research</h2>
       <div class="sr d3 prose">
         <p>For most of life’s history the ocean was not one ocean but many, each sea with its own creatures.</p>
-        <p>Then the Siberian Traps erupted ~252 million years ago, and the water grew too warm to hold the oxygen its animals needed. That mass extinction, “the Great Dying”, was enormous in scale and intensity. But when things settled the ocean was not empty. </p> <p> It was alike. </p> 
+        <p>Then the Siberian Traps erupted ~252 million years ago, and the water grew too warm to hold the oxygen its animals needed. That mass extinction, “the Great Dying”, was enormous in scale and intensity. But when things settled the ocean was not empty.</p>
+        <p>It was alike.</p>
         <p>The same few survivors everywhere, all over the globe.</p>
-        <p><p></p>Not every catastrophe does this. A meteor took three quarters of all life ~66 million years ago and every sea still kept its own character.</p></p>
+        <p>Not every catastrophe does this. A meteor took three quarters of all life ~66 million years ago and every sea still kept its own character.</p>
         <p>So when I rifle through the history of life, I find that it is not the size of the ruin that causes this “Great Dulling”. It takes warm water and mass death at once, in great intensity, worldwide.</p>
-        <p><p>I also put the same question to the ocean we have now. I ask: Which reefs are nearest to running out of breathable water? Which of the invasive species arriving on a coastline will stay, and what makes a species more likely to be invasive? And, ultimately, whether we will end up with many mosaics in the future, or one.</p></p>
+        <p>I also put the same question to the ocean we have now. I ask: Which reefs are nearest to running out of breathable water? Which of the invasive species arriving on a coastline will stay, and what makes a species more likely to be invasive? And, ultimately, whether we will end up with many mosaics in the future, or one.</p>
       </div>
     </section>
 
-    <section class="about-section">
+    <section class="about-block">
       <h2 class="eyebrow sr d1">The Teaching</h2>
       <div class="sr d3 prose">
         <p>I believe students learn best when they are presented with different ways of understanding a subject.</p>
-        <p><p>That's why I like to design my classes through <a href="https://www.cultofpedagogy.com/backward-design-basics/" target="_blank" rel="noopener noreferrer">backwards classroom design</a>. I create scaffolded projects and assessments that help students to show their understanding at several stages and in different ways, because each student learns differently.</p></p>
+        <p>That's why I like to design my classes through <a href="https://www.cultofpedagogy.com/backward-design-basics/" target="_blank" rel="noopener noreferrer">backwards classroom design</a>. I create scaffolded projects and assessments that help students to show their understanding at several stages and in different ways, because each student learns differently.</p>
         <p>I also enjoy the gamification of some of my lessons, when appropriate. For example, on a lesson on the “Great Dying”, I had students build a cartoon creature and select its traits to try to “survive the mass extinction” based on what they learned previously.</p>
-        <p><p>Building a classroom where everyone feels welcomed and like they belong is incredibly important to me, so I also build pedagogical practices that makes as many students feel that way as I can. For example, I put out surveys at the beginning of a semester asking for the level of knowledge a student has and what they're excited to learn about. Every lesson, I ask what they want to go over a bit more before we start the new content. And mid-way through the semester, I check in to see how students feel about the content and what they'd like me to improve on.</p></p>
+        <p>Building a classroom where everyone feels welcomed and like they belong is incredibly important to me, so I also build pedagogical practices that makes as many students feel that way as I can. For example, I put out surveys at the beginning of a semester asking for the level of knowledge a student has and what they're excited to learn about. Every lesson, I ask what they want to go over a bit more before we start the new content. And mid-way through the semester, I check in to see how students feel about the content and what they'd like me to improve on.</p>
       </div>
     </section>
 
-    <section class="about-section">
+    <section class="about-block">
       <h2 class="eyebrow sr d1">Beyond the Lab</h2>
       <div class="sr d3 prose">
-        <p>I also draw, in charcoal and digitally, and often provide scientific illustrations to my work. <p> <p> I've drawn graphical abstracts, designed active projects for students to learn about oceanic diversity and extinction, and created logos for symposiums and conferences I helped organize. </p> 
-        <p> My personal magnum opus is in writing a high fantasy novel threaded with biology and geology. I draw inspiration in this novel from my own cultural folklore, and from geology, biology, and my own research.</p></p>
+        <p>I also draw, in charcoal and digitally, and often provide scientific illustrations to my work.</p>
+        <p>I've drawn graphical abstracts, designed active projects for students to learn about oceanic diversity and extinction, and created logos for symposiums and conferences I helped organize.</p>
+        <p>My personal magnum opus is in writing a high fantasy novel threaded with biology and geology. I draw inspiration in this novel from my own cultural folklore, and from geology, biology, and my own research.</p>
       </div>
     </section>
 
